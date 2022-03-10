@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/user-page.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Home</title>
+  </head>
+  <body style="height:100%;">
+    <div class="logout-container">
+      <a href="/logout" class="logout"><- logout</a>
+    </div>
+    <div class="user-centering-div center">
+      <div class="user-container" id="parent">
+        <div class="user-information row">
+          <h1>Welcome {{user_name}}!</h1>
+        </div>
+        <h1 class="other-users-heading">
+          Other registered users:
+        </h1>
+        {% for user in users%}
+        <div class="other-users-container">
+          <div class="other-user row">
+            <h1>{{user.id}}</h1>
+            <h1>{{user.name}}</h1>
+            <h1>{{user.phone_number}}</h1>
+          </div>
+        </div>
+        {%endfor%}
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+html{
+  height:100%;
+}
+*{
+  color:#2b2a2a;
+  margin:0px;
+  padding:0px;
+  box-sizing: content-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+body{
+  background: #EC6F66;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #F3A183, #EC6F66);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #F3A183, #EC6F66); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-attachment: fixed;
+}
+
+.column{
+  display:flex;
+  flex-direction: column;
+}
+
+.row{
+  display:flex;
+  flex-direction: row;
+}
+
+.center{
+  display:flex;
+  justify-content: center;
+}
+
+.user-centering-div{
+  padding-top:100px;
+  width:100%;
+}
+.user-container{
+  border-radius: 5px;
+  background-color: white;
+  width:70%;
+}
+.other-users-heading{
+  font-size: 25px;
+  color:gray;
+  padding-left: 50px;
+  padding-bottom:50px;
+}
+.user-information{
+  font-size: 30px;
+  padding-top:50px;
+  justify-content: space-around;
+  padding-bottom: 150px;
+}
+.other-users-container{
+  justify-content: space-around;
+  border-top: 1px solid black;
+  padding:50px 0 50px 100px;
+}
+.other-user h1{
+  padding-right:80px;
+}
+.other-user{
+  justify-content: space-around;
+}
+.logout-container{
+  padding-top:50px;
+  padding-left:50px;
+}
+.logout{
+  font-size: 30px;
+  font-weight: 700;
+}

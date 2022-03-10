@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/intlTelInput.css"/>
+    <script src="../static/js/intlTelInput.min.js"></script>
+    <title>Login</title>
+  </head>
+  <body style="height:100%;">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert alert-error">{{ messages[0] }}</div>
+      {% endif %}
+    {% endwith %}
+    <div class="alert" style="display:none">
+      <h1></h1>
+    </div>
+    <div class="login-form-centering-div center">
+      <div class="login-form-container center column">
+        <h1 class="login-form-header">LOGIN</h1>
+        <div class="login-form-wrapper center">
+          <form style="height:100%;" id="sign-in-form" class="login-form column" onsubmit="process(event)" method="post">
+            <input class="login-form-input phone" type="tel" name="phone_number" placeholder="Phone number" required/>
+            <input class="login-form-input" type="password" name="password" placeholder="Password" required/>
+            <div class="login-form-submission-bts row" center>
+              <button id="register" class="submission-btn" >REGISTER</button>
+              <input class="submission-btn" id="sign-in" name="submission-btn" type="submit" value="SIGN IN"/>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="rectangle-container">
+      <div class="rectangle one"></div>
+      <div class="rectangle two"></div>
+    </div>
+
+    <footer>
+      <p>
+        Made by <a href="https://www.linkedin.com/in/danils-kubiskins" style="color:white">Danils Kubiškins</a> for Darba Drošības Centrs<br />
+        Background image by <a href="https://www.pexels.com/photo/climate-cold-snow-wood-7440530/" style="color:white">Mikhail Nilov</a>
+      </p>
+    </footer>
+  </body>
+  <script> 
+    let phoneInputField = document.querySelector(".phone");
+    const button = document.getElementById('register');
+    const error = document.querySelector(".alert");
+
+    // allow register button to redirect without form being filled 
+    button.onclick = function(){
+      location.href = "/register"
+    };
+    
+    // phone input field setup
+    const phoneInput = window.intlTelInput(phoneInputField, {
+      separateDialCode:false,
+      preferredCountries: ["lv", "lt", "ee", "ua"],
+      utilsScript:
+        "../static/js/utils.js",
+    });
+    
+    function process(event) {
+      event.preventDefault();
+
+      let phoneNumber = phoneInput.getNumber();
+      
+      error.style.display = "none";
+
+      if (phoneInput.isValidNumber()) {
+        // make sure that the phone number contains dial code
+        phoneInputField.value = phoneInput.getNumber()
+
+        document.getElementById("sign-in-form").submit();
+      } else {
+        error.style.display = "";
+        error.innerHTML = `Invalid phone number.`;
+      }
+    }
+  </script>
+</html>

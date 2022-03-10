@@ -1,0 +1,148 @@
+html{
+  height:100%;
+}
+*{
+  margin:0px;
+  padding:0px;
+  box-sizing: content-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+body{
+    overflow: hidden;
+  background-image:url("assets/background.png");
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.column{
+  display:flex;
+  flex-direction: column;
+}
+
+.row{
+  display:flex;
+  flex-direction: row;
+}
+
+.center{
+  display:flex;
+  justify-content: center;
+}
+
+.login-form-container{
+  z-index: 1;
+  margin-top:50px;
+  background-color:white;
+  width:700px;
+  height:600px;
+  border-radius: 5px;
+}
+.login-form-header{
+  color:#2b2a2a;
+  text-align: center;
+  font-weight: 900;
+  padding:100px 0 100px 0;
+}
+
+.login-form{
+  padding-bottom:150px;
+}
+
+.login-form-input::placeholder{
+  font-size: 18px;
+  color:#9E9B9B;
+}
+.login-form-input{
+  font-size: 18px;
+  width:250px;
+  padding:20px;
+  margin-bottom:30px;
+  background-color:#F4F1FF;
+  border:none;
+  border-radius:5px;
+}
+.login-form-input:focus{
+  outline:none;
+}
+
+.login-form-submission-bts{
+  justify-content: space-between;
+}
+.submission-btn{
+  border:none;
+  margin-top:25px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 5px;
+  padding:15px;
+}
+
+#sign-in.submission-btn {
+  background-color:#E68673;
+}
+#register.submission-btn {
+  background-color: #F4F1FF;
+}
+
+.name{
+  margin-right: 10px;
+}
+.password{
+  margin-right: 10px;
+}
+.phone{
+  width:100%;
+}
+
+.rectangle-container{
+  width:100%;
+  height:100%;
+}
+.rectangle{
+  position:relative;
+  width:1100px;
+  height:1200px;
+  background-image: url("assets/rectangle.svg");
+  background-repeat: no-repeat;
+  opacity:.45;
+}
+
+.one{
+  position:absolute;
+  top:-500px;
+  right:-500px;
+}
+.two{
+  position:absolute;
+  bottom:-500px;
+  left:-500px;
+}
+
+.alert{
+  animation: linear 1s warning-appear;
+  font-size: 22px !important;
+  font-weight: 700;
+  position:fixed;
+  text-align: center;
+  z-index: 2;
+  width:100%;
+  height:40px;
+  background-color: red;
+}
+
+@keyframes warning-appear{
+  0%{
+    background-color:white;
+  }
+  50%{
+    background-color:red;
+  }
+  75%{
+    background-color:white;
+  }
+  100%{
+    background-color:red;
+  }
+}

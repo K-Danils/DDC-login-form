@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/register-form.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/css/intlTelInput.css"/>
+    <script src="../static/js/intlTelInput.min.js"></script>
+    <title>Register</title>
+  </head>
+  <body style="height:100%;">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert alert-error">{{ messages[0] }}</div>
+      {% endif %}
+    {% endwith %}
+    <div class="alert" style="display:none">
+      <h1></h1>
+    </div>
+    <div class="login-form-centering-div center">
+      <div class="login-form-container center column">
+        <h1 class="login-form-header">REGISTER</h1>
+        <div class="login-form-wrapper center">
+          <form style="height:100%;" id="register" class="login-form column" onsubmit="process(event)" method="post">
+            <div class="row center">
+              <input class="login-form-input name" type="text" name="name" placeholder="Name" required/>
+              <input class="login-form-input surname" type="text" name="surname" placeholder="Surname" required/>
+            </div>
+            <div class="column center">
+              <input class="login-form-input phone" type="tel" name="phone_number" placeholder="Phone number" required/>
+              <div class="alert alert-error" style="display: none;"></div>
+            </div>
+            <div class="row center" style="padding-top:30px;">
+              <input class="login-form-input password" type="password" name="password" id="password" placeholder="Password" pattern="(?=.*\d)(?=.*[A-Z]).{6,}" title="Minimum of 6 characters. Should have at least one uppercase character and one number." required/>
+              <input class="login-form-input" type="password"  name="confirm-password" id="confirm-password" placeholder="Confirm Password" required/>
+            </div>
+            <div class="login-form-submission-bts row center">
+              <input class="submission-btn" id="sign-in" name="submission-btn" type="submit" value="SUBMIT"/>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="rectangle-container">
+      <div class="rectangle one"></div>
+      <div class="rectangle two"></div>
+    </div>
+
+  </body>
+  <script>
+    const phoneInputField = document.querySelector(".phone");
+    const error = document.querySelector(".alert");
+
+   // phone input field setup
+    const phoneInput = window.intlTelInput(phoneInputField, {
+      separateDialCode:true,
+      preferredCountries: ["lv", "lt", "ee", "ua"],
+      utilsScript:
+        "../static/js/utils.js",
+    });
+
+    function process(event) {
+      event.preventDefault();
+
+      const form = document.getElementById("register");
+      const phoneNumber = phoneInput.getNumber();
+
+      error.style.display = "none";
+
+      // for the best practice this should be moved to the backend, but will do for this project
+      if(document.getElementById("password").value !== document.getElementById("confirm-password").value){
+        error.style.display = "";
+        error.innerHTML = `Passwords do not match.`;
+        return;
+      }
+
+      if (phoneInput.isValidNumber()) {
+        // make sure that the phone number contains dial code
+        phoneInputField.value = phoneInput.getNumber()
+
+        form.submit();
+      } else {
+        error.style.display = "";
+        error.innerHTML = `Invalid phone number.`;
+      }
+    }
+
+ </script>
+</html>
