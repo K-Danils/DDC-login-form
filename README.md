@@ -3,7 +3,7 @@
 Instrukcijas lai palaistu lokāli. (nepieciešams Python un Pip)  
 
 1. Lejupielādēt / klonēt resursu failus, tad terminālī ievadīt:  
-    cd ...jūsu path\DDC-login-form-main  
+    cd <jūsu path>/DDC-login-form-main  
 
 2. Jāizveido virtual environment:   
     Windows    
