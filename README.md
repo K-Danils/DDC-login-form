@@ -29,7 +29,7 @@ Instrukcijas lai palaistu lokāli. (nepieciešams Python un Pip)
 
 5. tagad projektam ir jābūt pieejamam http://127.0.0.1:5000/
 
-Datu bāzē jau ir pāris ieraksti, lai demonstrētu mājaslapas darbību.
-testa konta login info: 
-    phone: +37123456789 vai 23456789
-    password: Password1!
+Datu bāzē jau ir pāris ieraksti, lai demonstrētu mājaslapas darbību.  
+testa konta login info:   
+    phone: +37123456789 vai 23456789  
+    password: Password1!  
