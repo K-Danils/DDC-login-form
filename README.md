@@ -2,14 +2,14 @@
 
 Instrukcijas lai palaistu lokāli. (nepieciešams Python un Pip)
 
-1. Lejupielādēt / klonēt resursu failus, tad terminālī ievadīt:
-    cd ...jūsu path\DDC-login-form-main
+1. Lejupielādēt / klonēt resursu failus, tad terminālī ievadīt:  
+    cd ...jūsu path\DDC-login-form-main  
 
-2. nepieciešams instalēt visas paciņas norādītas requirements.txt
-    pip install -r requirements.txt
+2. nepieciešams instalēt visas paciņas norādītas requirements.txt  
+    pip install -r requirements.txt  
 
-3. Jānokļūst project mapē ar:
-    cd project
+3. Jānokļūst project mapē ar:  
+    cd project  
 
 4. tad priekš bash:  
     export FLASK_APP=main  
