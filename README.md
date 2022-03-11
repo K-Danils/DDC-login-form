@@ -1,33 +1,48 @@
-# DDC-login-form
+# DDC-login-form  
 
-Instrukcijas lai palaistu lokāli. (nepieciešams Python un Pip)
+Instrukcijas lai palaistu lokāli. (nepieciešams Python un Pip)  
 
 1. Lejupielādēt / klonēt resursu failus, tad terminālī ievadīt:  
     cd ...jūsu path\DDC-login-form-main  
 
-2. nepieciešams instalēt visas paciņas norādītas requirements.txt  
+2. Jāizveido virtual environment:   
+    Windows    
+    py -m venv venv  
+      
+    MacOS/Linux  
+    python3 -m venv venv  
+
+3. Jāaktivizē virtual environment:  
+    Windows  
+    venv\Scripts\activate  
+    
+    MacOS/Linux  
+    . venv/bin/activate  
+    
+4. nepieciešams instalēt visas paciņas norādītas requirements.txt  
     pip install -r requirements.txt  
 
-3. Jānokļūst project mapē ar:  
+5. Jānokļūst project mapē ar:  
     cd project  
 
-4. tad priekš bash:  
+6. tad ir jāpalaiž pats flask projekts:
+    Bash    
     export FLASK_APP=main  
     flask run  
     
-    priekš Fish  
+    Fish  
     set -x FLASK_APP main  
     flask run  
 
-    priekš CMD  
+    CMD  
     set FLASK_APP=main  
     flask run  
 
-    priekš Powershell  
+     Powershell  
      $env:FLASK_APP = "main"  
      flask run  
 
-5. tagad projektam ir jābūt pieejamam http://127.0.0.1:5000/
+7. tagad projektam ir jābūt pieejamam http://127.0.0.1:5000/
 
 Datu bāzē jau ir pāris ieraksti, lai demonstrētu mājaslapas darbību.  
 testa konta login info:   
