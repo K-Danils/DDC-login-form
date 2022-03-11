@@ -1,6 +1,6 @@
 # DDC-login-form  
 
-Instrukcijas lai palaistu lokāli. (nepieciešams Python un Pip)  
+Instrukcijas lai palaistu lokāli. (nepieciešams Python (3.9 rekomendēts) un Pip)  
 
 1. Lejupielādēt / klonēt resursu failus, tad terminālī ievadīt:  
     cd <jūsu path>/DDC-login-form-main  
